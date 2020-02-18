@@ -1,4 +1,5 @@
 import glob
+import os.path
 
 def getFiles():
     return glob.glob("./input/*.in")
@@ -10,6 +11,13 @@ def getFileData(fileName):
         noOfSlices = [int(ip) for ip in line.split()]
     file.close()
     return(sliceCount,pizzaType,noOfSlices)
+
+def writeToOutputFile(fileName, result):
+    file = open(os.path.join('output', os.path.basename(os.path.splitext(fileName)[0] + '.out')) , 'w')
+    file.write(str(len(result))+"\n")
+    resultStr = ' '.join([str(slices) for slices in result])
+    file.write(resultStr)
+    file.close()
 
 def getRequiredPizza(sliceCount,pizzaCount,slices):
     maxNeed = 0
@@ -33,9 +41,9 @@ def getRequiredPizza(sliceCount,pizzaCount,slices):
             totalSlices = currentSlices
     return totalSlices
 
+# Runner code
 files = getFiles()
-
 for fileName in files:
     fileData = getFileData(fileName)
     result = getRequiredPizza(fileData[0],fileData[1],fileData[2])
-    print(len(result))
+    writeToOutputFile(fileName, result)
