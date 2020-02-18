@@ -4,10 +4,10 @@ def getFiles():
     return glob.glob("./input/*.in")
 
 def getFileData(fileName):
-    f= open(fileName, 'r')
-    sliceCount , pizzaType = [int(ip) for ip in next(f).split()]
-    for line in f:
-        noOfSlices = [int(x) for x in line.split()]
+    file = open(fileName, 'r')
+    sliceCount , pizzaType = [int(ip) for ip in next(file).split()]
+    for line in file:
+        noOfSlices = [int(ip) for ip in line.split()]
     f.close()
     return(sliceCount,pizzaType,noOfSlices)
 
