@@ -36,6 +36,7 @@ def getRequiredPizza(sliceCount,pizzaCount,slices):
                 currentNeed = totalNeed
                 currentSlices.append(j)
                 continue
+                
         if maxNeed < currentNeed:
             maxNeed = currentNeed
             totalSlices = currentSlices
