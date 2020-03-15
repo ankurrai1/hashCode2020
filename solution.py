@@ -41,7 +41,6 @@ def getRequiredPizza(sliceCount,pizzaCount,slices):
             totalSlices = currentSlices
     return totalSlices
 
-
 # Runner code
 files = getFiles()
 for fileName in files:
