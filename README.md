@@ -1,4 +1,4 @@
-## ***hashCode2020***
+## ***Google Hash Code 2020 Practice Problem***
 ----
 >This repo has code of google hash code practice problem solution for year 2020.
 
